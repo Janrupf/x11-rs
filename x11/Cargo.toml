@@ -1,6 +1,6 @@
 [package]
 name = "x11"
-version = "2.19.0"
+version = "2.20.0"
 authors = [
     "daggerbot <daggerbot@gmail.com>",
     "Erle Pereira <erle@erlepereira.com>",
@@ -12,7 +12,7 @@ repository = "https://github.com/AltF02/x11-rs.git"
 build = "build.rs"
 documentation = "https://docs.rs/x11"
 workspace = ".."
-edition = "2018"
+edition = "2021"
 
 [features]
 all = ["dpms", 
@@ -57,4 +57,4 @@ dox = []
 libc = "0.2"
 
 [build-dependencies]
-pkg-config = "0.3.8"
+pkg-config = "0.3.24"
