@@ -6,7 +6,7 @@ use std::os::raw::{
   c_int,
 };
 
-use ::xlib::{
+use crate::xlib::{
   Bool,
   XID,
   Status,
