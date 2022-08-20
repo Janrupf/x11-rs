@@ -19,6 +19,7 @@ fn main() {
         ("xcursor", "1.1", "xcursor"),
         ("xext", "1.3", "dpms"),
         ("xft", "2.1", "xft"),
+        ("xfixes", "1", "xfixes"),
         ("xi", "1.7", "xinput"),
         ("xinerama", "1.1", "xinerama"),
         ("xmu", "1.1", "xmu"),

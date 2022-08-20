@@ -19,7 +19,8 @@ all = ["dpms",
         "glx", 
         "xcursor", 
         "xf86vmode", 
-        "xft", 
+        "xft",
+        "xfixes",
         "xinerama", 
         "xinput", 
         "xlib", 
@@ -39,6 +40,7 @@ xcomposite = []
 xcursor = []
 xf86vmode = []
 xft = []
+xfixes = []
 xinerama = []
 xinput = []
 xlib = []
