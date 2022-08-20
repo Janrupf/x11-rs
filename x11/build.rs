@@ -20,6 +20,7 @@ fn main() {
         ("xext", "1.3", "dpms"),
         ("xfixes", "3.1", "xfixes"),
         ("xft", "2.1", "xft"),
+        ("xfixes", "1", "xfixes"),
         ("xi", "1.7", "xinput"),
         ("xinerama", "1.1", "xinerama"),
         ("xmu", "1.1", "xmu"),
