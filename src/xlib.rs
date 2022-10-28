@@ -14,6 +14,7 @@ use super::internal::{mem_eq, transmute_union};
 use super::xf86vmode;
 use super::xrandr;
 use super::xss;
+use super::xfixes;
 
 // deprecated
 pub mod xkb {}
@@ -1076,6 +1077,8 @@ pub union XEvent {
     pub xrr_resource_change_notify: xrandr::XRRResourceChangeNotifyEvent,
     // xscreensaver
     pub xss_notify: xss::XScreenSaverNotifyEvent,
+    // xfixes
+    pub xfixes_cursor_notify: xfixes::XFixesCursorNotifyEvent,
 }
 
 impl XEvent {
