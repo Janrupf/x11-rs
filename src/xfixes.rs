@@ -2,9 +2,8 @@
 // The X11 libraries are available under the MIT license.
 // These bindings are public domain.
 
-use std::os::raw::c_int;
 use super::xlib::{Atom, Bool, Cursor, Display, Pixmap, Status, Time, Window, XRectangle, GC, XID};
-use libc::{c_char, c_int, c_short, c_uint, c_ulong, c_ushort};
+use libc::{c_char, c_int, c_short, c_uint, c_ulong, c_ushort, c_long};
 
 //
 // functions
