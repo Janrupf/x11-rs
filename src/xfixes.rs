@@ -2,6 +2,7 @@
 // The X11 libraries are available under the MIT license.
 // These bindings are public domain.
 
+use std::os::raw::c_int;
 use super::xlib::{Atom, Bool, Cursor, Display, Pixmap, Status, Time, Window, XRectangle, GC, XID};
 use libc::{c_char, c_int, c_short, c_uint, c_ulong, c_ushort};
 
@@ -15,7 +16,7 @@ x11_link! { Xlib, x11, ["libXfixes.so.3", "libXfixes.so"], 35,
     pub fn XFixesVersion() -> c_int,
     pub fn XFixesChangeSaveSet(dpy: *mut Display, win: Window, mode: c_int, target: c_int, map: c_int) -> (),
     pub fn XFixesSelectSelectionInput(dpy: *mut Display, win: Window, selection: Atom, event_mask: c_ulong) -> (),
-    pub fn XFixesSelectCursorInput(dpy: Display, win: Window, event_mask: c_ulong) -> (),
+    pub fn XFixesSelectCursorInput(dpy: *mut Display, win: Window, event_mask: c_ulong) -> (),
     pub fn XFixesGetCursorImage(dpy: *mut Display) -> *mut XFixesCursorImage,
     pub fn XFixesCreateRegion(dpy: *mut Display, rectangles: *mut XRectangle, nrectangles: c_int) -> XserverRegion,
     pub fn XFixesCreateRegionFromBitmap(dpy: *mut Display, bitmap: Pixmap) -> XserverRegion,
@@ -103,3 +104,11 @@ pub struct XFixesCursorImage {
     pub atom: Atom,
     pub name: *const c_char,
 }
+
+//
+// constants
+//
+
+pub const XFixesCursorNotify: c_int = 1;
+pub const XFixesDisplayCursorNotify: c_int = 0;
+pub const XFixesDisplayCursorNotifyMask: c_long = 0x0000_0001;
