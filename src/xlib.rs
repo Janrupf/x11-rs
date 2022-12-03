@@ -3630,6 +3630,20 @@ pub const XkbTwoLevelIndex: c_int = 1;
 pub const XkbAlphabeticIndex: c_int = 2;
 pub const XkbKeypadIndex: c_int = 3;
 
+pub const XkbGroup1Index: c_uint = 0;
+pub const XkbGroup2Index: c_uint = 1;
+pub const XkbGroup3Index: c_uint = 2;
+pub const XkbGroup4Index: c_uint = 3;
+pub const XkbAnyGroup: c_uint = 254;
+pub const XkbAllGroups: c_uint = 255;
+
+pub const XkbGroup1Mask: c_uint = 1 << 0;
+pub const XkbGroup2Mask: c_uint = 1 << 1;
+pub const XkbGroup3Mask: c_uint = 1 << 2;
+pub const XkbGroup4Mask: c_uint = 1 << 3;
+pub const XkbAnyGroupMask: c_uint = 1 << 7;
+pub const XkbAllGroupsMask: c_uint = 0x0f;
+
 // Bitmask returned by XParseGeometry
 pub const NoValue: c_int = 0x0000;
 pub const XValue: c_int = 0x0001;
