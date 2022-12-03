@@ -3620,6 +3620,7 @@ pub const XkbVirtualModMapMask: c_uint = 1 << 7;
 pub const XkbAllClientInfoMask: c_uint = XkbKeyTypesMask | XkbKeySymsMask | XkbModifierMapMask;
 pub const XkbAllServerInfoMask: c_uint = XkbExplicitComponentsMask | XkbKeyActionsMask | XkbKeyBehaviorsMask | XkbVirtualModsMask | XkbVirtualModMapMask;
 pub const XkbAllMapComponentsMask: c_uint = XkbAllClientInfoMask | XkbAllServerInfoMask;
+pub const XkbAllComponentsMask: c_uint = 0x7F;
 
 pub const XkbUseCoreKbd: c_uint = 0x0100;
 pub const XkbUseCorePtr: c_uint = 0x0200;
