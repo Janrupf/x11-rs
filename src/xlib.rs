@@ -862,7 +862,13 @@ pub struct _XkbBounds;
 pub struct _XkbChanges;
 
 #[repr(C)]
-pub struct _XkbClientMapRec;
+pub struct _XkbClientMapRec {
+    pub size_types: c_uchar,
+    pub num_type: c_uchar,
+    pub types: XkbKeyTypePtr,
+    pub key_sym_map: XkbSymMapPtr,
+    pub modmap: *mut c_uchar,
+}
 
 #[repr(C)]
 pub struct _XkbColor;
@@ -981,6 +987,14 @@ pub struct _XkbShape;
 #[repr(C)]
 pub struct _XkbSymInterpretRec;
 
+#[repr(C)]
+pub struct _XkbSymMapRec {
+    pub kt_index: [c_uchar; XkbNumKbdGroups],
+    pub group_info: c_uchar,
+    pub width: c_uchar,
+    pub offset: c_ushort,
+}
+
 // union placeholders
 pub type XEDataObject = *mut c_void;
 
@@ -1040,6 +1054,7 @@ pub type XkbShapePtr = *mut _XkbShape;
 pub type XkbStatePtr = *mut _XkbStateRec;
 pub type XkbStateRec = _XkbStateRec;
 pub type XkbSymInterpretPtr = *mut _XkbSymInterpretRec;
+pub type XkbSymMapPtr = *mut _XkbSymMapRec;
 pub type XOM = *mut _XOM;
 pub type XrmDatabase = *mut _XrmHashBucketRec;
 pub type XrmOptionDescList = *mut XrmOptionDescRec;
