@@ -3526,6 +3526,9 @@ pub const XkbCompatLookupModsMask: c_ulong = 1 << 12;
 pub const XkbPointerButtonMask: c_ulong = 1 << 13;
 pub const XkbAllStateComponentsMask: c_ulong = 0x3fff;
 
+pub const XkbUseCoreKbd: c_int = 0x0100;
+pub const XkbUseCorePtr: c_int = 0x0200;
+
 // Bitmask returned by XParseGeometry
 pub const NoValue: c_int = 0x0000;
 pub const XValue: c_int = 0x0001;
