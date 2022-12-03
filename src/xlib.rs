@@ -3578,20 +3578,20 @@ pub const XkbCompatLookupModsMask: c_ulong = 1 << 12;
 pub const XkbPointerButtonMask: c_ulong = 1 << 13;
 pub const XkbAllStateComponentsMask: c_ulong = 0x3fff;
 
-pub const XkbKeyTypesMask: c_int = 1 << 0;
-pub const XkbKeySymsMask: c_int = 1 << 1;
-pub const XkbModifierMapMask: c_int = 1 << 2;
-pub const XkbExplicitComponentsMask: c_int = 1 << 3;
-pub const XkbKeyActionsMask: c_int = 1 << 4;
-pub const XkbKeyBehaviorsMask: c_int = 1 << 5;
-pub const XkbVirtualModsMask: c_int = 1 << 6;
-pub const XkbVirtualModMapMask: c_int = 1 << 7;
-pub const XkbAllClientInfoMask: c_int = XkbKeyTypesMask | XkbKeySymsMask | XkbModifierMapMask;
-pub const XkbAllServerInfoMask: c_int = XkbExplicitComponentsMask | XkbKeyActionsMask | XkbKeyBehaviorsMask | XkbVirtualModsMask | XkbVirtualModMapMask;
-pub const XkbAllMapComponentsMask: c_int = XkbAllClientInfoMask | XkbAllServerInfoMask;
+pub const XkbKeyTypesMask: c_uint = 1 << 0;
+pub const XkbKeySymsMask: c_uint = 1 << 1;
+pub const XkbModifierMapMask: c_uint = 1 << 2;
+pub const XkbExplicitComponentsMask: c_uint = 1 << 3;
+pub const XkbKeyActionsMask: c_uint = 1 << 4;
+pub const XkbKeyBehaviorsMask: c_uint = 1 << 5;
+pub const XkbVirtualModsMask: c_uint = 1 << 6;
+pub const XkbVirtualModMapMask: c_uint = 1 << 7;
+pub const XkbAllClientInfoMask: c_uint = XkbKeyTypesMask | XkbKeySymsMask | XkbModifierMapMask;
+pub const XkbAllServerInfoMask: c_uint = XkbExplicitComponentsMask | XkbKeyActionsMask | XkbKeyBehaviorsMask | XkbVirtualModsMask | XkbVirtualModMapMask;
+pub const XkbAllMapComponentsMask: c_uint = XkbAllClientInfoMask | XkbAllServerInfoMask;
 
-pub const XkbUseCoreKbd: c_int = 0x0100;
-pub const XkbUseCorePtr: c_int = 0x0200;
+pub const XkbUseCoreKbd: c_uint = 0x0100;
+pub const XkbUseCorePtr: c_uint = 0x0200;
 
 // Bitmask returned by XParseGeometry
 pub const NoValue: c_int = 0x0000;
