@@ -820,39 +820,59 @@ pub type XPointer = *mut c_char;
 
 // opaque structures
 pub enum _XDisplay {}
+
 pub enum xError {}
+
 pub enum xEvent {}
+
 pub enum _XGC {}
+
 pub enum _XIC {}
+
 pub enum _XIM {}
+
 pub enum _XRegion {}
+
 pub enum _XOC {}
+
 pub enum _XOM {}
+
 pub enum _XrmHashBucketRec {}
 
 // TODO structs
 #[repr(C)]
 pub struct _XcmsCCC;
+
 #[repr(C)]
 pub struct XcmsColor;
+
 #[repr(C)]
 pub struct _XcmsColorSpace;
+
 #[repr(C)]
 pub struct _XcmsFunctionSet;
+
 #[repr(C)]
 pub struct _XkbAction;
+
 #[repr(C)]
 pub struct _XkbBounds;
+
 #[repr(C)]
 pub struct _XkbChanges;
+
 #[repr(C)]
 pub struct _XkbClientMapRec;
+
 #[repr(C)]
 pub struct _XkbColor;
+
 #[repr(C)]
 pub struct _XkbComponentList;
+
 #[repr(C)]
 pub struct _XkbComponentNames;
+
 #[repr(C)]
 pub struct _XkbControls {
     pub mk_dflt_btn: c_uchar,
@@ -878,60 +898,86 @@ pub struct _XkbControls {
     pub axt_ctrls_values: c_uint,
     pub per_key_repeat: [c_uchar; 32],
 }
+
 #[repr(C)]
 pub struct _XkbControlsChanges;
+
 #[repr(C)]
 pub struct _XkbControlsNotify;
+
 #[repr(C)]
 pub struct _XkbDeviceChanges;
+
 #[repr(C)]
 pub struct _XkbDeviceInfo;
+
 #[repr(C)]
 pub struct _XkbDeviceLedInfo;
+
 #[repr(C)]
 pub struct _XkbDoodad;
+
 #[repr(C)]
 pub struct _XkbExtensionDeviceNotify;
+
 #[repr(C)]
 pub struct _XkbGeometry;
+
 #[repr(C)]
 pub struct _XkbGeometrySizes;
+
 #[repr(C)]
 pub struct _XkbIndicatorMapRec;
+
 #[repr(C)]
 pub struct _XkbKey;
+
 #[repr(C)]
 pub struct _XkbKeyType;
+
 #[repr(C)]
 pub struct _XkbMapChanges;
+
 #[repr(C)]
 pub struct _XkbMods {
     pub mask: c_uchar,
     pub real_mods: c_uchar,
     pub vmods: c_ushort,
 }
+
 #[repr(C)]
 pub struct _XkbNameChanges;
+
 #[repr(C)]
 pub struct _XkbNamesNotify;
+
 #[repr(C)]
 pub struct _XkbOutline;
+
 #[repr(C)]
 pub struct _XkbOverlay;
+
 #[repr(C)]
 pub struct _XkbOverlayKey;
+
 #[repr(C)]
 pub struct _XkbOverlayRow;
+
 #[repr(C)]
 pub struct _XkbProperty;
+
 #[repr(C)]
 pub struct _XkbRow;
+
 #[repr(C)]
 pub struct _XkbSection;
+
 #[repr(C)]
 pub struct _XkbServerMapRec;
+
 #[repr(C)]
 pub struct _XkbShape;
+
 #[repr(C)]
 pub struct _XkbSymInterpretRec;
 
@@ -1000,7 +1046,7 @@ pub type XrmOptionDescList = *mut XrmOptionDescRec;
 
 // function pointers
 pub type XConnectionWatchProc =
-    Option<unsafe extern "C" fn(*mut Display, XPointer, c_int, Bool, XPointer)>;
+Option<unsafe extern "C" fn(*mut Display, XPointer, c_int, Bool, XPointer)>;
 pub type XIMProc = Option<unsafe extern "C" fn(XIM, XPointer, XPointer)>;
 pub type XICProc = Option<unsafe extern "C" fn(XIC, XPointer, XPointer) -> Bool>;
 
@@ -1129,7 +1175,7 @@ impl fmt::Debug for XEvent {
                 _ => d.field("any", &self.any),
             }
         }
-        .finish()
+            .finish()
     }
 }
 
@@ -1246,6 +1292,7 @@ pub struct XButtonEvent {
     pub button: c_uint,
     pub same_screen: Bool,
 }
+
 pub type XButtonPressedEvent = XButtonEvent;
 pub type XButtonReleasedEvent = XButtonEvent;
 
@@ -1374,6 +1421,7 @@ pub struct XCrossingEvent {
     pub focus: Bool,
     pub state: c_uint,
 }
+
 pub type XEnterWindowEvent = XCrossingEvent;
 pub type XLeaveWindowEvent = XCrossingEvent;
 
@@ -1426,6 +1474,7 @@ pub struct XFocusChangeEvent {
     pub mode: c_int,
     pub detail: c_int,
 }
+
 pub type XFocusInEvent = XFocusChangeEvent;
 pub type XFocusOutEvent = XFocusChangeEvent;
 
@@ -1478,6 +1527,7 @@ pub struct XKeyEvent {
     pub keycode: c_uint,
     pub same_screen: Bool,
 }
+
 pub type XKeyPressedEvent = XKeyEvent;
 pub type XKeyReleasedEvent = XKeyEvent;
 
@@ -1547,6 +1597,7 @@ pub struct XMotionEvent {
     pub is_hint: c_char,
     pub same_screen: Bool,
 }
+
 pub type XPointerMovedEvent = XMotionEvent;
 
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -2036,6 +2087,7 @@ fn xkb_event_size_test() {
 }
 
 pub enum XkbKbdDpyStateRec {}
+
 pub type XkbKbdDpyStatePtr = *mut XkbKbdDpyStateRec;
 
 //
@@ -2763,7 +2815,7 @@ pub struct ImageFns {
     pub get_pixel: Option<unsafe extern "C" fn(*mut XImage, c_int, c_int) -> c_ulong>,
     pub put_pixel: Option<unsafe extern "C" fn(*mut XImage, c_int, c_int, c_ulong) -> c_int>,
     pub sub_image:
-        Option<unsafe extern "C" fn(*mut XImage, c_int, c_int, c_uint, c_uint) -> *mut XImage>,
+    Option<unsafe extern "C" fn(*mut XImage, c_int, c_int, c_uint, c_uint) -> *mut XImage>,
     pub add_pixel: Option<unsafe extern "C" fn(*mut XImage, c_long) -> c_int>,
 }
 
@@ -3525,6 +3577,18 @@ pub const XkbLookupModsMask: c_ulong = 1 << 11;
 pub const XkbCompatLookupModsMask: c_ulong = 1 << 12;
 pub const XkbPointerButtonMask: c_ulong = 1 << 13;
 pub const XkbAllStateComponentsMask: c_ulong = 0x3fff;
+
+pub const XkbKeyTypesMask: c_int = 1 << 0;
+pub const XkbKeySymsMask: c_int = 1 << 1;
+pub const XkbModifierMapMask: c_int = 1 << 2;
+pub const XkbExplicitComponentsMask: c_int = 1 << 3;
+pub const XkbKeyActionsMask: c_int = 1 << 4;
+pub const XkbKeyBehaviorsMask: c_int = 1 << 5;
+pub const XkbVirtualModsMask: c_int = 1 << 6;
+pub const XkbVirtualModMapMask: c_int = 1 << 7;
+pub const XkbAllClientInfoMask: c_int = XkbKeyTypesMask | XkbKeySymsMask | XkbModifierMapMask;
+pub const XkbAllServerInfoMask: c_int = XkbExplicitComponentsMask | XkbKeyActionsMask | XkbKeyBehaviorsMask | XkbVirtualModsMask | XkbVirtualModMapMask;
+pub const XkbAllMapComponentsMask: c_int = XkbAllClientInfoMask | XkbAllServerInfoMask;
 
 pub const XkbUseCoreKbd: c_int = 0x0100;
 pub const XkbUseCorePtr: c_int = 0x0200;
