@@ -939,7 +939,15 @@ pub struct _XkbIndicatorMapRec;
 pub struct _XkbKey;
 
 #[repr(C)]
-pub struct _XkbKeyType;
+pub struct _XkbKeyType {
+    pub mods: XkbModsRec,
+    pub num_levels: c_uchar,
+    pub map_count: c_uchar,
+    pub map: XkbKTMapEntryPtr,
+    pub preserve: XkbModsPtr,
+    pub name: Atom,
+    pub level_names: *mut Atom,
+}
 
 #[repr(C)]
 pub struct _XkbMapChanges;
@@ -993,6 +1001,13 @@ pub struct _XkbSymMapRec {
     pub group_info: c_uchar,
     pub width: c_uchar,
     pub offset: c_ushort,
+}
+
+#[repr(C)]
+pub struct _XkbKTMapEntry {
+    pub active: Bool,
+    pub level: c_uchar,
+    pub mods: XkbModsRec,
 }
 
 // union placeholders
@@ -1055,6 +1070,7 @@ pub type XkbStatePtr = *mut _XkbStateRec;
 pub type XkbStateRec = _XkbStateRec;
 pub type XkbSymInterpretPtr = *mut _XkbSymInterpretRec;
 pub type XkbSymMapPtr = *mut _XkbSymMapRec;
+pub type XkbKTMapEntryPtr = *mut _XkbKTMapEntry;
 pub type XOM = *mut _XOM;
 pub type XrmDatabase = *mut _XrmHashBucketRec;
 pub type XrmOptionDescList = *mut XrmOptionDescRec;
