@@ -3624,6 +3624,11 @@ pub const XkbAllMapComponentsMask: c_uint = XkbAllClientInfoMask | XkbAllServerI
 pub const XkbUseCoreKbd: c_uint = 0x0100;
 pub const XkbUseCorePtr: c_uint = 0x0200;
 
+pub const XkbOneLevelIndex: c_int = 0;
+pub const XkbTwoLevelIndex: c_int = 1;
+pub const XkbAlphabeticIndex: c_int = 2;
+pub const XkbKeypadIndex: c_int = 3;
+
 // Bitmask returned by XParseGeometry
 pub const NoValue: c_int = 0x0000;
 pub const XValue: c_int = 0x0001;
