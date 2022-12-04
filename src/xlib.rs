@@ -866,6 +866,9 @@ pub struct _XkbClientMapRec {
     pub size_types: c_uchar,
     pub num_type: c_uchar,
     pub types: XkbKeyTypePtr,
+    pub size_syms: c_ushort,
+    pub num_syms: c_ushort,
+    pub syms: *mut KeySym,
     pub key_sym_map: XkbSymMapPtr,
     pub modmap: *mut c_uchar,
 }
